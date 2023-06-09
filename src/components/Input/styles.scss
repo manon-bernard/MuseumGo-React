@@ -1,0 +1,20 @@
+@use '../../styles/vars';
+@use '../../styles/reset';
+
+.input {
+
+  display:block;
+
+  &--text {
+    width: 100%;
+    border: 2px solid vars.$primary;
+    padding:0.5rem;
+  }
+
+  &--checkbox {
+    //
+  }
+    
+
+
+}

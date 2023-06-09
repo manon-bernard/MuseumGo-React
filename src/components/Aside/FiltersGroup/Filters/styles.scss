@@ -1,0 +1,15 @@
+@use './../../../../styles/vars';
+
+.aside {
+
+  &__filter {
+    margin-block:1rem
+  }
+
+  &__title--sub {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+}
