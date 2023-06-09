@@ -6,3 +6,7 @@ body {
   background-color: vars.$body-background-color;
   color: vars.$text;
 }
+
+img {
+  max-width: 100%;
+}

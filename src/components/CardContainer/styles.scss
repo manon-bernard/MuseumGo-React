@@ -1,5 +1,11 @@
 @use '../../styles/vars';
 
 .card-container {
-  padding: 0.25rem;
+  max-width: 75vw;
+
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1rem;
 }

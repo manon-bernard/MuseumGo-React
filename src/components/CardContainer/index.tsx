@@ -2,11 +2,15 @@
 import './styles.scss';
 
 // COMPONENTS IMPORTS
+import Card from './Card';
 
 function CardContainer() {
   return (
     <div className="card-container">
-      <p>catalog</p>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }

@@ -1,0 +1,37 @@
+@use '../../../styles/vars';
+
+.card {
+  background-color: vars.$card-background-color;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+
+  &__content {
+    padding: 1rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__details {
+    margin-bottom: 0.75rem;
+  }
+
+}
+
+.card__tag  {
+  display: inline-block;
+  border-radius: 0.25rem;
+  margin: 1rem 0.25rem;
+  padding: 0.5rem;
+  color: vars.$light;
+
+  &--visited {
+    background-color: vars.$dark;
+  }
+
+  &--list {
+    background-color: vars.$primary;
+  }
+}
