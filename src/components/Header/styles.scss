@@ -1,0 +1,18 @@
+@use '../../styles/vars';
+
+.header {
+  // Background
+  background-image: linear-gradient(to left, rgba(241, 239, 233, 0.1), rgba(29, 30, 28, 0.75)), url("./../../assets/images/museum.png");
+  background-size: cover;
+  background-position: center;
+
+  // Text
+  color: vars.$title-color;
+
+  // Spacing
+  padding: 5vw;
+
+  //Flex
+  display: flex;
+  justify-content: space-between;
+}

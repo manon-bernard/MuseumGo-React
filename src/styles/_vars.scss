@@ -1,1 +1,23 @@
-$primary: rgb(191, 182, 191); 
+@charset "utf-8";
+
+// SCOLOR
+$purple: #8A4D76;
+$green: #4d894b;
+$brown: #1d1e1c;
+$beige-lighter: #f1efe9;
+
+// GLOBAL
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $green;
+$text: $brown;
+$link: $green;
+$link-hover: $purple;
+$link-visited: $purple;
+$link-focus: $purple;
+$title-color: $beige-lighter;
+$subtitle-color: $beige-lighter;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$footer-background-color: $brown;
+

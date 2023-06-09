@@ -1,0 +1,22 @@
+@use './../../../styles/vars';
+
+
+.header {
+
+  &__nav {
+    align-self: end;
+  }
+  
+  &__link {
+    display:block;
+    margin: 0.75rem;
+    padding: 0.75em;
+    background-color: vars.$purple;
+    border-radius: 0.25rem;
+
+    &:hover {
+      background-color: vars.$primary;
+    }
+  }
+
+}
