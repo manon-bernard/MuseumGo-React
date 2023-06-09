@@ -1,0 +1,22 @@
+@use '../../styles/vars';
+@use '../../styles/reset';
+
+.button {
+    display:block;
+
+    margin-block: 0.75rem;
+    padding: 0.75em;
+
+    background-color: vars.$accent;
+    color: vars.$light;
+
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 0.25rem;
+
+
+    &:hover {
+      background-color: vars.$primary;
+    }
+}

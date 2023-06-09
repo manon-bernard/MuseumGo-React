@@ -4,7 +4,7 @@ import './styles.scss';
 function HeaderTitle() {
   return (
     <div className="header__title">
-      <p className="header__title--main">MuseumGo</p>
+      <h1 className="header__title--main">MuseumGo</h1>
       <p className="header__title--sub">Visitez les tous...</p>
     </div>
   );

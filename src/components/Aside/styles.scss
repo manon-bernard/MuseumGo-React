@@ -1,0 +1,16 @@
+@use '../../styles/vars';
+
+.aside {
+  width: 25vw;
+  padding: 2vw;
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-block: 1em;
+  }
+
+  label {
+    display: block;
+  }
+}
