@@ -1,0 +1,12 @@
+@use '../../styles/vars';
+
+.footer {
+  // Background
+  background-color:vars.$brown;
+
+  // Text
+  color: vars.$title-color;
+
+  // Spacing
+  padding: 5vw;
+}
