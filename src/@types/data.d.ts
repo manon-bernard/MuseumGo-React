@@ -68,3 +68,9 @@ export interface Facet {
   state: string
   path: string
 }
+
+export interface MuseumState {
+  records: Record[],
+  regions: Facet[],
+  domains: Facet[],
+}
