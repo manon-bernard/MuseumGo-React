@@ -1,31 +1,20 @@
-// STYLES IMPORTS
-import './styles.scss';
+// // STYLES IMPORTS
+// import './styles.scss';
 
-// MODULES IMPORTS
-import { useEffect } from 'react';
+// ROUTER IMPORTS
+import { Route, Routes } from 'react-router';
 
-// REDUX IMPORTS
-import { useAppDispatch } from '../../hooks/redux';
-import { fetchMuseumData } from '../../store/reducers/museum';
-
-// COMPONENTS IMPORTS
-import Header from '../Header';
-import Footer from '../Footer';
-import Main from '../Main';
+// PAGES IMPORTS
+import Museum from '../../pages/Museum';
+import Home from '../../pages/Home';
 
 function App() {
-  const dispatch = useAppDispatch();
-
-  // DATA LOADER
-  useEffect(() => {
-    dispatch(fetchMuseumData());
-  }, [dispatch]);
-
   return (
     <div className="app">
-      <Header />
-      <Main />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/museum/:id" element={<Museum />} />
+      </Routes>
     </div>
   );
 }

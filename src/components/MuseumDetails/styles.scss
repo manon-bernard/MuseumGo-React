@@ -1,0 +1,38 @@
+@use '../../styles/vars';
+
+.museum {
+  font-family: inherit;
+  max-width: 60vw;
+  margin:2rem auto;
+
+  &__region {
+    display: inline-block;
+    margin-block: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    color: vars.$light;
+    background-color: vars.$primary;
+    text-transform: uppercase;
+  }
+
+  &__domains {
+    padding-block: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    color: vars.$accent;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: vars.$primary;
+    margin-block: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

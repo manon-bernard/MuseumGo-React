@@ -19,12 +19,12 @@ export const initialState: MuseumState = {
 
 // Fetch data
 export const fetchMuseumData = createAppAsyncThunk(
-  'museum/FETCH_DATA',
+  'museum/FETCH_ALL_DATA',
   async () => {
     const { data } = await axios({
       url: '/',
       method: 'GET',
-      baseURL: 'https://data.culture.gouv.fr/api/records/1.0/search/?dataset=musees-de-france-base-museofile&q=&rows=10&facet=dompal&facet=region&facet=ville_m',
+      baseURL: 'https://data.culture.gouv.fr/api/records/1.0/search/?dataset=musees-de-france-base-museofile&q=&rows=2000&facet=dompal&facet=region&facet=ville_m',
     });
 
     return data as Data;
