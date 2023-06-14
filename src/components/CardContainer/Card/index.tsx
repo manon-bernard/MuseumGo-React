@@ -2,6 +2,7 @@
 import { Record } from '../../../@types/data';
 import Button from '../../Button';
 import './styles.scss';
+import placeholder from '../../../assets/images/placeholder.jpg';
 
 // TYPES
 // INTERFACE
@@ -18,7 +19,7 @@ function Card({ museum }: CardState) {
   return (
     <article className="card">
       <div className="card-image">
-        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="" />
+        <img src={placeholder} alt="" />
       </div>
       <div className="card__content">
         <h3 className="card__title">{name}</h3>
@@ -28,7 +29,7 @@ function Card({ museum }: CardState) {
           <span className="card__tag card__tag--list">Dans ma liste</span>
         </div>
         <a href={`https://${website}`}>Site Web</a>
-        <Button value="Coeur" isSubmit={false} />
+        <Button value="coeur" isSubmit={false} />
       </div>
     </article>
   );

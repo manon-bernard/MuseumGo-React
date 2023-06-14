@@ -8,14 +8,14 @@ import { useAppSelector } from '../../../hooks/redux';
 function FiltersGroup() {
   // STORE DATA
   const regions = useAppSelector((state) => state.museum.regions);
-  const domains = useAppSelector((state) => state.museum.domains);
+  // const domains = useAppSelector((state) => state.museum.domains);
 
   return (
     <section className="aside__filter-group">
       <form action="" className="filter-form">
         <h2 className="aside__title">Filtrer</h2>
-        <Filters category="théme" items={domains} />
         <Filters category="région" items={regions} />
+        {/* <Filters category="théme" items={domains} /> */}
       </form>
     </section>
   );
