@@ -1,10 +1,9 @@
 @use '../../styles/vars';
-@use '../../styles/reset';
 
 .button {
     display:block;
 
-    margin-block: 0.75rem;
+    margin-block: 1rem;
     padding: 0.75em;
 
     background-color: vars.$accent;

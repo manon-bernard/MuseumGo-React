@@ -1,6 +1,3 @@
-// // STYLE
-// import './styles.scss';
-
 // INTERFACE
 interface PageProps {
   children: React.ReactNode;

@@ -18,7 +18,7 @@ interface MuseumDetailsProps {
 }
 
 function MuseumDetails({ museum } : MuseumDetailsProps) {
-  // Museum Data
+  // Get Raw Museum Data
   const {
     nomoff: name,
     url_m: website,
@@ -26,13 +26,32 @@ function MuseumDetails({ museum } : MuseumDetailsProps) {
     atout: assets,
     artiste: artists,
     dompal: domains,
-    phare: signature,
-    interet: interest,
+    interet: interests,
     hist: history,
     lieu_m: location,
+    cp_m: zip,
+    ville_m: city,
+    an_creat: year,
+    categ: category,
   } = museum.fields;
 
-  const address = `${museum.fields.adrl1_m}, ${museum.fields.cp_m} ${museum.fields.ville_m} `;
+  // Format Data
+  const address = `${zip} ${city} `;
+
+  const interestsParagraphs = interests?.split('. ') || [];
+  const assetsParagraphs = assets?.split('. ') || [];
+  const themesList = domains?.split(';') || [];
+  const historyParagraphs = history?.split('. ') || [];
+  const artistsList = artists?.split('. ') || [];
+
+  // Page DataType Array
+  const items = [
+    { content: interestsParagraphs, title: 'Interets' },
+    { content: assetsParagraphs, title: 'Atouts majeurs' },
+    { content: themesList, title: 'Thèmes principaux' },
+    { content: historyParagraphs, title: 'Historique' },
+    { content: artistsList, title: 'Artistes principaux' },
+  ];
 
   return (
 
@@ -40,28 +59,34 @@ function MuseumDetails({ museum } : MuseumDetailsProps) {
       <section className="museum__map">
         <img src={placeholder} alt="" />
         <div className="map" />
-        <p className="museum__region">{region}</p>
-        <p className="museum__adresse">{location}</p>
-        <p className="museum__adresse">{address}</p>
       </section>
       <section className="museum__infos">
-        <h1 className="museum__name">{name}</h1>
-        <h2 className="museum__title">Themes</h2>
-        <div className="museum__themes">{domains}</div>
-        <h2 className="museum__title">Atouts</h2>
-        <p className="museum__atouts">{assets}</p>
-        <h2 className="museum__title">Interets</h2>
-        <p className="museum__interests">{interest}</p>
-        <h2 className="museum__title">Artiste</h2>
-        <p className="museum__interests">{artists}</p>
-        <h2 className="museum__title">Histoire</h2>
-        <p className="museum__histoire">{history}</p>
-        <h2 className="museum__title">Artiste phare</h2>
-        <p className="museum__artiste">{signature}</p>
+        <p className="museum__region">{region}</p>
+        <p className={`museum__year ${(!year) ? 'hidden' : ''}`}>{year}</p>
+        <p className={`museum__year ${(!category) ? 'hidden' : ''}`}>{category}</p>
+
+        <h1 className={`museum__name ${(!name) ? 'hidden' : ''}`}>{name}</h1>
+        <p className="museum__address">{location}</p>
+        <p className="museum__address">{address}</p>
+
+        {items.map((item) => (
+          <div key={item.title} className={`${(item.content.length < 1) ? 'hidden' : ''}`}>
+            <h2 className="museum__title">{item.title}</h2>
+            {
+              item.content.map((paragraph) => (
+                <p className="museum__paragraph" key={paragraph}>{`${paragraph}.`}</p>
+              ))
+            }
+          </div>
+
+        ))}
+
         <div className="museum__tags" />
-        <h2 className="museum__title">Lien</h2>
-        <a href={`https://${website}`}>Site Web</a>
-        <Button value="coeur" isSubmit={false} />
+
+        <h2 className={`museum__title ${(!website) ? 'hidden' : ''}`}>{`${"Plus d'infos"}`}</h2>
+        <a href={`https://${website}`} className="link">Site Web</a>
+
+        <Button value="Ajouter à ma liste" isSubmit={false} />
       </section>
     </div>
   );

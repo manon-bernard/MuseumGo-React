@@ -1,5 +1,5 @@
-// // STYLES IMPORTS
-// import './styles.scss';
+// STYLES IMPORTS
+import './styles.scss';
 
 // ROUTER IMPORTS
 import { Route, Routes } from 'react-router';

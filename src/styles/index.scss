@@ -1,5 +1,6 @@
 @use 'reset';
 @use 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -9,4 +10,9 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.link:hover {
+  border-bottom: 2px solid vars.$accent;
+  padding:0.01rem;
 }

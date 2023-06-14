@@ -1,13 +1,15 @@
 @use '../../styles/vars';
 
 .museum {
-  font-family: inherit;
   max-width: 60vw;
   margin:2rem auto;
 
-  &__region {
+  &__region, 
+  &__year, 
+  &__category {
     display: inline-block;
     margin-block: 1rem;
+    margin-right: 0.25rem;
     padding: 0.75rem;
     border-radius: 0.25rem;
     color: vars.$light;
@@ -15,13 +17,14 @@
     text-transform: uppercase;
   }
 
-  &__domains {
-    padding-block: 1rem;
-    text-transform: uppercase;
+  &__paragraph {
+    padding-block: 0.25rem;
+    line-height: 1.1;
   }
 
   &__name {
     color: vars.$accent;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: 700;
@@ -30,9 +33,24 @@
 
   &__title {
     color: vars.$primary;
-    margin-block: 1rem;
+    margin: 1.75rem 0 1rem 0;
     font-size: 1.25rem;
     font-weight: 700;
     text-transform: uppercase;
   }
+
+  &__address {
+    font-weight: 700;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  &__themes {
+    font-weight: 700;
+    padding-bottom: 1rem;
+  }
+}
+
+.hidden {
+  display:none;
 }
