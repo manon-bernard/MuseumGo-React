@@ -1,16 +1,17 @@
 // STYLES IMPORTS
 import './styles.scss';
 
-// IMAGE IMPORT
-import placeholder from '../../assets/images/placeholder.jpg';
+// LEAFLET IMPORTS
+import {
+  MapContainer, TileLayer, Marker, Popup,
+} from 'react-leaflet';
 
 // COMPONENTS IMPORTS
+import { LatLngExpression } from 'leaflet';
 import Button from '../Button';
 
 // TYPES IMPORTS
 import { Record } from '../../@types/data';
-
-// COMPONENTS IMPORTS
 
 // INTERFACE
 interface MuseumDetailsProps {
@@ -33,6 +34,9 @@ function MuseumDetails({ museum } : MuseumDetailsProps) {
     ville_m: city,
     an_creat: year,
     categ: category,
+    longitude,
+    latitude,
+
   } = museum.fields;
 
   // Format Data
@@ -53,12 +57,32 @@ function MuseumDetails({ museum } : MuseumDetailsProps) {
     { content: artistsList, title: 'Artistes principaux' },
   ];
 
+  // Map
+  const coordinates = [latitude, longitude] as LatLngExpression;
+
   return (
 
     <div className="museum">
       <section className="museum__map">
-        <img src={placeholder} alt="" />
-        <div className="map" />
+
+        <MapContainer
+          center={coordinates}
+          scrollWheelZoom={false}
+          zoom={13}
+          id="map"
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={coordinates}>
+            <Popup>
+              {name.toUpperCase()}
+            </Popup>
+          </Marker>
+
+        </MapContainer>
+
       </section>
       <section className="museum__infos">
         <p className="museum__region">{region}</p>
