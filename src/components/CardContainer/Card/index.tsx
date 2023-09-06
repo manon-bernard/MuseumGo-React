@@ -27,7 +27,10 @@ function Card({ museum }: CardState) {
   return (
     <article className="card">
       <div className="card-image">
-        <img src={placeholder} alt="" />
+        <img
+          src={placeholder}
+          alt=""
+        />
       </div>
       <div className="card__content">
         <Link to={`/museum/${id}`}>
@@ -40,7 +43,10 @@ function Card({ museum }: CardState) {
           <span className="card__tag card__tag--list">Dans ma liste</span>
         </div>
         <a href={`https://${website}`}>Site Web</a>
-        <Button value="coeur" isSubmit={false} />
+        <Button
+          value="coeur"
+          isSubmit={false}
+        />
       </div>
     </article>
   );

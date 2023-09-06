@@ -12,10 +12,14 @@ function FiltersGroup() {
 
   return (
     <section className="aside__filter-group">
-      <form action="" className="filter-form">
+      <form
+        action=""
+        className="filter-form">
         <h2 className="aside__title">Filtrer</h2>
-        <Filters category="région" items={regions} />
-        {/* <Filters category="théme" items={domains} /> */}
+        <Filters
+          category="région"
+          items={regions}
+        />
       </form>
     </section>
   );

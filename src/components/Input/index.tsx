@@ -5,12 +5,10 @@ import './styles.scss';
 interface InputProps {
   type: 'checkbox' | 'text';
   value: string;
+  onChange: () => void;
 }
 
-function Input({
-  type,
-  value,
-} : InputProps) {
+function Input({ type, value, onChange }: InputProps) {
   return (
     <label htmlFor={value}>
       <input
@@ -18,10 +16,10 @@ function Input({
         type={type}
         className={`input--${type}`}
         placeholder={value}
+        onChange={onChange}
       />
       {value}
     </label>
-
   );
 }
 
