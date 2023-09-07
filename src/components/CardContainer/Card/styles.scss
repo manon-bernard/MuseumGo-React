@@ -10,6 +10,7 @@
 
   &__title {
     font-size: 1.25rem;
+    height: 6rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -18,20 +19,33 @@
     margin-bottom: 0.75rem;
   }
 
-}
-
-.card__tag  {
-  display: inline-block;
-  border-radius: 0.25rem;
-  margin: 1rem 0.25rem;
-  padding: 0.5rem;
-  color: vars.$light;
-
-  &--visited {
-    background-color: vars.$dark;
+  &__region {
+    text-transform: uppercase;
+    padding: 1rem 1rem 0.25rem 1rem;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-align: right;
   }
 
-  &--list {
-    background-color: vars.$primary;
+  &__location {
+    padding: 0.5rem 1rem 1rem 1rem;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-align: right;
   }
+
+  &__image {
+    max-height:7rem;
+    overflow: hidden;
+  }
+
+  &__actions {
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: right;
+    max-height:10rem;
+    overflow: hidden;
+  }
+
 }

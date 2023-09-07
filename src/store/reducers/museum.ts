@@ -14,6 +14,8 @@ export const initialState: MuseumState = {
   regions: [],
   domains: [],
   filtered_regions: [],
+  searched_records: [],
+  searchValue: '',
   loading: true,
   error: false,
 };
@@ -36,6 +38,11 @@ export const fetchMuseumData = createAppAsyncThunk(
 
 // Check regions filter
 export const setChecked = createAction<string>('museum/SET_FILTER');
+
+// Search
+export const setSearchString = createAction<string>('museum/SET_SEARCH_STRING');
+
+export const submitSearch = createAction('museum/SUBMIT_SEARCH');
 
 // REDUCER
 
@@ -64,6 +71,19 @@ const museumReducer = createReducer(initialState, (builder) => {
       } else {
         state.filtered_regions = state.filtered_regions.filter((item) => item !== action.payload);
       }
+    })
+    .addCase(setSearchString, (state, action) => {
+      state.searchValue = action.payload;
+    })
+    .addCase(submitSearch, (state, action) => {
+      const matchingRecords = state.records.filter((record) => {
+        const { fields } = record;
+        const fieldValues = Object.values(fields);
+
+        return fieldValues.some((value) => typeof value === 'string' && value.includes(state.searchValue));
+      });
+
+      state.searched_records = matchingRecords;
     });
 });
 

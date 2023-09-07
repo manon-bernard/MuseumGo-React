@@ -17,13 +17,21 @@ function CardContainer() {
   const records = useAppSelector((state) => state.museum.records);
   let displayedRecords: Record[] = [];
 
-  // Filtering
+  // Filtering & Searching
   const filters = useAppSelector((state) => state.museum.filtered_regions);
 
-  if (filters.length === 0) {
-    displayedRecords = records;
+  const searchResults = useAppSelector((state) => state.museum.searched_records);
+
+  if (searchResults.length === 0) {
+    if (filters.length === 0) {
+      displayedRecords = records;
+    } else {
+      displayedRecords = records.filter((item) => filters.includes(item.fields.region));
+    }
+  } else if (filters.length === 0) {
+    displayedRecords = searchResults;
   } else {
-    displayedRecords = records.filter((item) => filters.includes(item.fields.region));
+    displayedRecords = searchResults.filter((item) => filters.includes(item.fields.region));
   }
 
   return (

@@ -5,7 +5,7 @@ import './styles.scss';
 interface InputProps {
   type: 'checkbox' | 'text';
   value: string;
-  onChange: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 function Input({ type, value, onChange }: InputProps) {
@@ -18,7 +18,7 @@ function Input({ type, value, onChange }: InputProps) {
         placeholder={value}
         onChange={onChange}
       />
-      {value}
+      {type === 'checkbox' ? value : ''}
     </label>
   );
 }
