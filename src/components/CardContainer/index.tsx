@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 // STYLES IMPORTS
 import './styles.scss';
 
@@ -65,7 +66,8 @@ function CardContainer() {
           )
         }
       </div>
-      <Pagination />
+
+      {displayedRecords.length === matchingRecords.length ? '' : <Pagination />}
     </div>
   );
 }
