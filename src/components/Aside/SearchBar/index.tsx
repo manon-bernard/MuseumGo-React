@@ -1,9 +1,13 @@
 // STYLES IMPORTS
+import './styles.scss';
+
+// REDUX IMPORTS
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { setSearchString, submitSearch } from '../../../store/reducers/museum';
+
+// COMPONENTS IMPORTS
 import Button from '../../Button';
 import Input from '../../Input';
-import './styles.scss';
 
 function SearchBar() {
   const dispatch = useAppDispatch();
@@ -41,5 +45,3 @@ function SearchBar() {
 }
 
 export default SearchBar;
-
-// TODO: pagination, favorites

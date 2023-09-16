@@ -6,6 +6,7 @@
 
   &__content {
     padding: 1rem;
+    position: relative;
   }
 
   &__title {
@@ -25,19 +26,20 @@
     font-weight: bold;
     font-size: 0.75rem;
     text-align: right;
+    background-color: vars.$green;
+    color: vars.$white;
   }
 
   &__location {
+    background-color: vars.$green;
+    color: vars.$white;
     padding: 0.5rem 1rem 1rem 1rem;
     font-weight: bold;
     font-size: 0.75rem;
     text-align: right;
   }
 
-  &__image {
-    max-height:7rem;
-    overflow: hidden;
-  }
+
 
   &__actions {
     display:flex;
@@ -47,5 +49,10 @@
     max-height:10rem;
     overflow: hidden;
   }
-
 }
+
+// @media (min-width: 600px) {
+//   .card{
+
+//   }
+// }

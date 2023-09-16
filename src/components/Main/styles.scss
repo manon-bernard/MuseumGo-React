@@ -4,3 +4,16 @@
   display: flex;
   gap:0.25rem;
 }
+
+@media (max-width: 900px) {
+  .main{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main{
+    max-width:1200px;
+    margin-inline: auto;
+  }
+}

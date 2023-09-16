@@ -1,7 +1,7 @@
 @use '../../styles/vars';
 
 .aside {
-  width: 25vw;
+  min-width: 350px;
   padding: 2vw;
 
   &__title {
@@ -12,5 +12,14 @@
 
   label {
     display: block;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .aside{
+    min-width: 250px;
+    width: auto;
+    padding: 2vw;
   }
 }

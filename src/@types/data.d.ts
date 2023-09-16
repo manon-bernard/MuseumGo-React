@@ -74,8 +74,9 @@ export interface MuseumState {
   regions: Facet[],
   domains: Facet[],
   filtered_regions: string[],
-  search_records: Record[],
+  searched_records: Record[],
   searchValue: string,
   loading: boolean,
-  error:boolean,
+  error: boolean,
+  loadedResults: number,
 }

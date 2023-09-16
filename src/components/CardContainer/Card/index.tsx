@@ -28,12 +28,6 @@ function Card({ museum }: CardState) {
     <article className="card">
       <p className="card__region">{region}</p>
       <p className="card__location">{location}</p>
-      <div className="card__image">
-        <img
-          src={placeholder}
-          alt=""
-        />
-      </div>
       <div className="card__content">
         <Link to={`/museum/${id}`}>
           <h3 className="card__title">{name}</h3>

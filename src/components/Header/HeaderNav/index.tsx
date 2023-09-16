@@ -6,14 +6,16 @@ function HeaderNav() {
     <div className="header__nav">
       <a
         href="/"
-        className="button header__link">
+        className="button header__link"
+      >
         Accueil
       </a>
-      <a
+      {/* <a
         href="/list"
-        className="button header__link">
+        className="button header__link"
+      >
         Liste
-      </a>
+      </a> */}
       {/* <a href="/login" className="button header__link">Se connecter</a>
       <a href="/logout" className="button header__link">Se déconnecter</a> */}
     </div>

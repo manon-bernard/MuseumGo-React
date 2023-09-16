@@ -18,6 +18,7 @@ export const initialState: MuseumState = {
   searchValue: '',
   loading: true,
   error: false,
+  loadedResults: 9,
 };
 
 // ACTIONS
@@ -44,6 +45,8 @@ export const setSearchString = createAction<string>('museum/SET_SEARCH_STRING');
 
 export const submitSearch = createAction('museum/SUBMIT_SEARCH');
 
+export const loadMore = createAction('museum/LOAD_MORE');
+
 // REDUCER
 
 const museumReducer = createReducer(initialState, (builder) => {
@@ -63,6 +66,9 @@ const museumReducer = createReducer(initialState, (builder) => {
       state.regions = action.payload.facet_groups[1].facets;
       state.loading = false;
     })
+    .addCase(loadMore, (state) => {
+      state.loadedResults += 9;
+    })
     .addCase(setChecked, (state, action) => {
       const checked = state.filtered_regions.includes(action.payload);
 
@@ -71,19 +77,20 @@ const museumReducer = createReducer(initialState, (builder) => {
       } else {
         state.filtered_regions = state.filtered_regions.filter((item) => item !== action.payload);
       }
+
+      state.loadedResults = 9;
     })
     .addCase(setSearchString, (state, action) => {
       state.searchValue = action.payload;
     })
-    .addCase(submitSearch, (state, action) => {
+    .addCase(submitSearch, (state) => {
       const matchingRecords = state.records.filter((record) => {
         const { fields } = record;
         const fieldValues = Object.values(fields);
-
         return fieldValues.some((value) => typeof value === 'string' && value.includes(state.searchValue));
       });
-
       state.searched_records = matchingRecords;
+      state.loadedResults = 9;
     });
 });
 
