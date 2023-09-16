@@ -84,7 +84,7 @@ const museumReducer = createReducer(initialState, (builder) => {
       state.searchValue = action.payload;
     })
     .addCase(submitSearch, (state) => {
-      const searchedWords = state.searchValue.split(' ');
+      const searchedWords = state.searchValue.split(' ').filter((word) => (word.trim() !== ''));
 
       const matchingRecords = state.records.filter((record) => {
         const { fields } = record;
@@ -100,6 +100,7 @@ const museumReducer = createReducer(initialState, (builder) => {
           return false;
         });
       });
+
       state.searched_records = matchingRecords;
       state.loadedResults = 9;
     });
