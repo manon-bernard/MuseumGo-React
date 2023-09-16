@@ -14,9 +14,10 @@ import { setChecked } from '../../../../store/reducers/museum';
 interface FiltersProps {
   category: string;
   items: Facet[];
+  isHidden: boolean;
 }
 
-function Filters({ category, items }: FiltersProps) {
+function Filters({ category, items, isHidden }: FiltersProps) {
   const dispatch = useAppDispatch();
 
   const displayedItems = [...items];
@@ -29,7 +30,7 @@ function Filters({ category, items }: FiltersProps) {
   return (
     <section className="aside__filter">
       <h2 className="aside__title--sub">{`Par ${category}`}</h2>
-      <div className="filters__list">
+      <div className={`filters__list ${isHidden ? 'visually-hidden' : ''}`}>
         {sortedItems.map((item) => (
           <Input
             type="checkbox"

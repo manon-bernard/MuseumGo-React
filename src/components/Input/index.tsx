@@ -18,7 +18,7 @@ function Input({ type, value, onChange }: InputProps) {
         id={value}
         type={type}
         className={`input--${type}`}
-        placeholder={value}
+        placeholder="mots-clefs, thème, ville..."
         onChange={onChange}
       />
       <div className="label">{type === 'checkbox' ? value : ''}</div>

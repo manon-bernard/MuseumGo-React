@@ -22,14 +22,12 @@ function FiltersGroup() {
         >
           <h2>Filtrer &gt;</h2>
         </button>
-        {isHiddenFilters ? (
-          ''
-        ) : (
-          <Filters
-            category="région"
-            items={regions}
-          />
-        )}
+
+        <Filters
+          category="région"
+          items={regions}
+          isHidden={isHiddenFilters}
+        />
       </form>
     </section>
   );
