@@ -40,6 +40,12 @@ function CardContainer() {
 
   return (
     <div>
+      {!loading && (
+        <p className="results">
+          {displayedRecords.length} musée(s) trouvé(s) ({matchingRecords.length} affiché(s))
+        </p>
+      )}
+
       <div className="card-container">
         {
           // Error

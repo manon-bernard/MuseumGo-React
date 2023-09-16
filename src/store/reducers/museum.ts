@@ -84,10 +84,21 @@ const museumReducer = createReducer(initialState, (builder) => {
       state.searchValue = action.payload;
     })
     .addCase(submitSearch, (state) => {
+      const searchedWords = state.searchValue.split(' ');
+
       const matchingRecords = state.records.filter((record) => {
         const { fields } = record;
         const fieldValues = Object.values(fields);
-        return fieldValues.some((value) => typeof value === 'string' && value.includes(state.searchValue));
+
+        // Regex to search whole words
+        const wordRegex = new RegExp(searchedWords.join('|'), 'i'); // 'i' pour ignorer la casse
+        return fieldValues.some((value) => {
+          if (typeof value === 'string') {
+            const wordsInField = value.split(/\s+/); // Divise fields value into words list
+            return wordsInField.some((word) => word.match(wordRegex) !== null);
+          }
+          return false;
+        });
       });
       state.searched_records = matchingRecords;
       state.loadedResults = 9;
