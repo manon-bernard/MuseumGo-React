@@ -18,6 +18,7 @@ export default function Home() {
   // DATA LOADER
   useEffect(() => {
     dispatch(fetchMuseumData());
+    console.log('render');
   }, [dispatch]);
 
   return (
