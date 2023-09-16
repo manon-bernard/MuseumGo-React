@@ -28,9 +28,9 @@ function Filters({ category, items, isHidden }: FiltersProps) {
   };
 
   return (
-    <section className="aside__filter">
+    <section className={`aside__filter ${isHidden ? 'visually-hidden' : ''}`}>
       <h2 className="aside__title--sub">{`Par ${category}`}</h2>
-      <div className={`filters__list ${isHidden ? 'visually-hidden' : ''}`}>
+      <div className="filters__list">
         {sortedItems.map((item) => (
           <Input
             type="checkbox"
