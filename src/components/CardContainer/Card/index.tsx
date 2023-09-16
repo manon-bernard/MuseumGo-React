@@ -34,10 +34,10 @@ function Card({ museum }: CardState) {
         </Link>
         <div className="card__actions">
           <a href={`https://${website}`}>Site Web</a>
-          <Button
-            value="coeur"
+          {/* <Button
+            value="+"
             isSubmit={false}
-          />
+          /> */}
         </div>
       </div>
     </article>

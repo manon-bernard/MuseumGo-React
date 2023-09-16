@@ -1,5 +1,4 @@
 // STYLES IMPORTS
-import { FaHeart } from 'react-icons/fa';
 import './styles.scss';
 
 // INTERFACE
@@ -12,8 +11,10 @@ function Button({ value, isSubmit }: ButtonProps) {
   return (
     <button
       type={isSubmit ? 'submit' : 'button'}
-      className="button">
-      {value === 'coeur' ? <FaHeart /> : value}
+      className="button"
+      aria-label={value}
+    >
+      {value === '+' ? '+' : value}
     </button>
   );
 }

@@ -1,15 +1,9 @@
 // STYLES IMPORTS
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { loadMore } from '../../../store/reducers/museum';
 import './styles.scss';
 
-// ROUTER IMPORTS
-
-// COMPONENTS IMPORTS
-
-// TYPES IMPORTS
-
-// INTERFACE
+// REACT IMPORTS
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { loadMore } from '../../../store/reducers/museum';
 
 function Pagination() {
   const dispatch = useAppDispatch();
@@ -26,6 +20,7 @@ function Pagination() {
         type="button"
         className="button"
         onClick={handleClick}
+        aria-label="loadmore"
       >
         Afficher plus
       </button>
