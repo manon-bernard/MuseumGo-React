@@ -56,3 +56,9 @@
 }
 
 #map { height: 300px; }
+
+@media (max-width: 600px) {
+  .museum {
+    max-width: 80vw;
+  }
+}
