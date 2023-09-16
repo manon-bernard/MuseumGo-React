@@ -7,10 +7,12 @@ import { Route, Routes } from 'react-router';
 // PAGES IMPORTS
 import Museum from '../../pages/Museum';
 import Home from '../../pages/Home';
+import ScrollToTop from '../ScrollToTop';
 
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
