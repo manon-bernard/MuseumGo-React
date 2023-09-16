@@ -10,7 +10,10 @@ interface InputProps {
 
 function Input({ type, value, onChange }: InputProps) {
   return (
-    <label htmlFor={value}>
+    <label
+      htmlFor={value}
+      className={type}
+    >
       <input
         id={value}
         type={type}
@@ -18,7 +21,7 @@ function Input({ type, value, onChange }: InputProps) {
         placeholder={value}
         onChange={onChange}
       />
-      {type === 'checkbox' ? value : ''}
+      <div className="label">{type === 'checkbox' ? value : ''}</div>
     </label>
   );
 }

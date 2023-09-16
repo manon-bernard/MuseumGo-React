@@ -11,3 +11,17 @@
     margin-bottom: 0.5rem;
   }
 }
+
+.filters__list {
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+@media (max-width: 900px) {
+
+  .filters__list {
+    max-width:100%;
+  }
+}

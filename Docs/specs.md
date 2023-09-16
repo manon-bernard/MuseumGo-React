@@ -7,7 +7,7 @@
 
 ### Description
 
-- Affichage de la liste des musées de France. 
+- Affichage de la liste des musées de France.
 - Création d'une application simple permettant l'affichage, la recherche et le tri de données.
 
 ### Objectifs
@@ -36,10 +36,6 @@
 - Page de détail d'un musée.
   - Liste des informations
   - Carte Leaflet.
-
-- Page de favoris.
-  - Liste des favoris
-  - Stockage de données en localstorage (musées favoris, musée visités)
 
 ## 4. Specifications techniques
 

@@ -2,6 +2,10 @@
 
 @media (max-width: 900px) {
   .aside__filter-group{
-    display:none;
+    // display:none;
+  }
+
+  .filters__list {
+    max-width:100%;
   }
 }

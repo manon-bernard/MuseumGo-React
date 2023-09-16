@@ -2,7 +2,6 @@
 
 .input {
 
-  display:block;
 
   &--text {
     width: 100%;
@@ -10,10 +9,21 @@
     padding:0.5rem;
   }
 
-  &--checkbox {
-    //
-  }
-    
-
-
 }
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkbox .label{
+  background-color: vars.$white;
+  border: 1px solid vars.$green;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  padding: 0.5rem;
+}
+
+.checkbox input[type="checkbox"]:checked + .label{
+  background-color: vars.$green;
+  color: vars.$white;
+}
+  
