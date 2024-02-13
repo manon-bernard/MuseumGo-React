@@ -58,7 +58,7 @@ const museumReducer = createReducer(initialState, (builder) => {
       state.loading = false;
     })
     .addCase(fetchMuseumData.fulfilled, (state, action) => {
-      console.log(action.payload.records[25]);
+      // console.log(action.payload.records[25]);
       state.records = action.payload.records;
       // state.domains = action.payload.facet_groups[0].facets;
       state.regions = action.payload.facet_groups[0].facets;
