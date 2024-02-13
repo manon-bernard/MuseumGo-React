@@ -24,18 +24,15 @@ export const initialState: MuseumState = {
 // ACTIONS
 
 // Fetch data
-export const fetchMuseumData = createAppAsyncThunk(
-  'museum/FETCH_ALL_DATA',
-  async () => {
-    const { data } = await axios({
-      url: '/',
-      method: 'GET',
-      baseURL: 'https://data.culture.gouv.fr/api/records/1.0/search/?dataset=musees-de-france-base-museofile&q=&rows=2000&facet=dompal&facet=region&facet=ville_m',
-    });
+export const fetchMuseumData = createAppAsyncThunk('museum/FETCH_ALL_DATA', async () => {
+  const { data } = await axios({
+    url: '/',
+    method: 'GET',
+    baseURL: 'https://data.culture.gouv.fr/api/records/1.0/search/?dataset=musees-de-france-base-museofile&q=&rows=2000&facet=dompal&facet=region&facet=ville_m',
+  });
 
-    return data as Data;
-  },
-);
+  return data as Data;
+});
 
 // Check regions filter
 export const setChecked = createAction<string>('museum/SET_FILTER');
@@ -61,9 +58,10 @@ const museumReducer = createReducer(initialState, (builder) => {
       state.loading = false;
     })
     .addCase(fetchMuseumData.fulfilled, (state, action) => {
+      console.log(action.payload.records[25]);
       state.records = action.payload.records;
-      state.domains = action.payload.facet_groups[0].facets;
-      state.regions = action.payload.facet_groups[1].facets;
+      // state.domains = action.payload.facet_groups[0].facets;
+      state.regions = action.payload.facet_groups[0].facets;
       state.loading = false;
     })
     .addCase(loadMore, (state) => {
@@ -84,7 +82,7 @@ const museumReducer = createReducer(initialState, (builder) => {
       state.searchValue = action.payload;
     })
     .addCase(submitSearch, (state) => {
-      const searchedWords = state.searchValue.split(' ').filter((word) => (word.trim() !== ''));
+      const searchedWords = state.searchValue.split(' ').filter((word) => word.trim() !== '');
       //
       const matchingRecords = state.records.filter((record) => {
         const { fields } = record;

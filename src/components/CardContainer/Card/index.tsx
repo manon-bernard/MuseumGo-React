@@ -5,8 +5,8 @@ import './styles.scss';
 import { Link } from 'react-router-dom';
 
 // COMPONENTS IMPORTS
-import placeholder from '../../../assets/images/placeholder.jpg';
-import Button from '../../Button';
+// import placeholder from '../../../assets/images/placeholder.jpg';
+// import Button from '../../Button';
 
 // TYPES IMPORTS
 import { Record } from '../../../@types/data';
@@ -19,10 +19,10 @@ interface CardState {
 function Card({ museum }: CardState) {
   // Museum Data
   const id = museum.recordid;
-  const name = museum.fields.nomoff;
-  const location = museum.fields.ville_m;
+  const name = museum.fields.nom_officiel;
+  const location = museum.fields.ville;
   const { region } = museum.fields;
-  const website = museum.fields.url_m;
+  const website = museum.fields.url;
 
   return (
     <article className="card">

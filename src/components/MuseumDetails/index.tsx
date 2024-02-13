@@ -19,43 +19,42 @@ interface MuseumDetailsProps {
 function MuseumDetails({ museum }: MuseumDetailsProps) {
   // Get Raw Museum Data
   const {
-    nomoff: name,
-    url_m: website,
+    nom_officiel: name,
+    url: website,
     region,
     atout: assets,
-    artiste: artists,
-    dompal: domains,
-    interet: interests,
-    hist: history,
-    lieu_m: location,
-    cp_m: zip,
-    ville_m: city,
-    an_creat: year,
-    categ: category,
-    longitude,
-    latitude,
+    // artiste: artists,
+    domaine_thematique: domains,
+    // interet: interests,
+    histoire: history,
+    lieu: location,
+    code_postal: zip,
+    ville: city,
+    annee_creation: year,
+    // categ: category,
+    coordonnees,
   } = museum.fields;
 
   // Format Data
   const address = `${zip} ${city} `;
 
-  const interestsParagraphs = interests?.split('. ') || [];
+  // const interestsParagraphs = interests?.split('. ') || [];
   const assetsParagraphs = assets?.split('. ') || [];
   const themesList = domains?.split(';') || [];
   const historyParagraphs = history?.split('. ') || [];
-  const artistsList = artists?.split('. ') || [];
+  // const artistsList = artists?.split('. ') || [];
 
   // Page DataType Array
   const items = [
-    { content: interestsParagraphs, title: 'Interets' },
+    // { content: interestsParagraphs, title: 'Interets' },
     { content: assetsParagraphs, title: 'Atouts majeurs' },
     { content: themesList, title: 'Thèmes principaux' },
     { content: historyParagraphs, title: 'Historique' },
-    { content: artistsList, title: 'Artistes principaux' },
+    // { content: artistsList, title: 'Artistes principaux' },
   ];
 
   // Map
-  const coordinates = [latitude, longitude] as LatLngExpression;
+  const coordinates = [coordonnees[0], coordonnees[1]] as LatLngExpression;
 
   return (
     <div className="museum">
@@ -78,7 +77,7 @@ function MuseumDetails({ museum }: MuseumDetailsProps) {
       <section className="museum__infos">
         <p className="museum__region">{region}</p>
         <p className={`museum__year ${!year ? 'hidden' : ''}`}>{year}</p>
-        <p className={`museum__year ${!category ? 'hidden' : ''}`}>{category}</p>
+        {/* <p className={`museum__year ${!category ? 'hidden' : ''}`}>{category}</p> */}
 
         <h1 className={`museum__name ${!name ? 'hidden' : ''}`}>{name}</h1>
         <p className="museum__address">{location}</p>
